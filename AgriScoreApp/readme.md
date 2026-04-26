@@ -12,7 +12,7 @@ A mobile-style web dashboard focused on agricultural management, designed to vis
 </p>
 ---
 
-## 🧠 Project Context
+## Project Context
 
 AgriScore is a mobile-like interface that simulates an agricultural evaluation system based on user activity, crop conditions, and financial behavior.
 
@@ -22,7 +22,7 @@ This project was developed for a technology competition held in Mexico City, whe
 
 ---
 
-## ⚙️ Technologies Used
+## Technologies Used
 
 - HTML5  
 - CSS3 (Responsive design + mobile app-style UI)  
@@ -31,7 +31,7 @@ This project was developed for a technology competition held in Mexico City, whe
 
 ---
 
-## 🔥 Features
+## Features
 
 - Mobile app-style navigation  
 - Interactive dashboard with key metrics  

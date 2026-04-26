@@ -71,7 +71,7 @@ git clone https://github.com/your-username/your-repo-name.git
 
 ---
 
-## 💡 Future Improvements
+## Future Improvements
 
 * Drag & drop scheduling
 * Mobile responsive optimization
@@ -80,12 +80,12 @@ git clone https://github.com/your-username/your-repo-name.git
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Ignacio Castro Vera**
 
 ---
 
-## ⭐ Notes
+##  Notes
 
 This project was built as a practice application to strengthen front-end development skills, focusing on DOM manipulation, UI design, and state management without frameworks.

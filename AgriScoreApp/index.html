@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriScore App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div class="mobile-frame">
+        <div id="app-content">
+            <div id="reloj" class="hora">
+                --:--
+
+            </div>
+            <!-- VISTA: INICIO -->
+            <section id="inicio" class="tab-content active">
+                <span class="date">26 de Marzo del 2026</span>
+                <div style="position: relative;">
+                    <h1>¡Buen día,<br><span class="highlight">Don José!</span></h1>
+                    <p class="subtitle text-muted">Su tierra está sana</p>
+                    <div class="avatar">👨🏼‍🌾</div>
+                </div>
+                
+
+                <!-- Botones de alternancia interna -->
+                <div class="toggle-box">
+                    <div class="toggle-indicator"></div>
+                    <button class="toggle-btn active" data-subtab="puntuacion">Puntuación actual</button>
+                    <button class="toggle-btn active" data-subtab="resumen">Resumen diario</button>
+                </div>
+
+                <!-- SUB-VISTA 1: Puntuación Actual -->
+                <div id="puntuacion" class="sub-view active">
+                 <!-- Reemplazo del medidor principal -->
+                <div class="gauge-wrapper">
+                    <!-- Capa para el efecto tridimensional central -->
+                    <div class="gauge-inner-shadow"></div>
+                    
+                    <svg class="gauge-svg" viewBox="0 0 200 200">
+                        <defs>
+                            <!-- Gradiente de amarillo a verde oscuro -->
+                            <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#fef08a" />
+                                <stop offset="50%" stop-color="#a3e635" />
+                                <stop offset="100%" stop-color="#14532d" />
+                            </linearGradient>
+                            <!-- Filtro de resplandor (Glow) -->
+                            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Pistas del medidor -->
+                        <path class="gauge-track" d="M 40,160 A 85,85 0 1,1 160,160" />
+                        <path class="gauge-fill" d="M 40,160 A 85,85 0 1,1 160,160" />
+                    </svg>
+                    
+                    <div class="score-display">
+                        <div class="score-number">
+                            750 
+                            <div class="score-trend-box">
+                                <span class="trend-arrow">▲</span>
+                                <span class="trend-value">10</span>
+                            </div>
+                        </div>
+                        <p class="score-label">Basado en tu<br>actividad agrícola</p>
+                    </div>
+                </div>
+
+                    <div class="grid-2">
+                        <div class="pill-card">Tasa Actual: 12%</div>
+                        <div class="pill-card">Nivel de Confianza: Alto</div>
+                    </div>
+
+                    <div class="goal-banner">
+                        <span class="highlight">▲ Próximo objetivo:</span> Completa 2 retos más para subir
+                    </div>
+
+                    <p class="disclaimer">
+                        Una puntuación alta en el AgriScore aumenta tus probabilidades de mejores condiciones crediticias con los bancos asociados
+                    </p>
+                </div>
+
+                <!-- SUB-VISTA 2: Resumen Diario -->
+                <div id="resumen" class="sub-view">
+                    <h2 style="margin-top: 35px;">Condiciones actuales</h2>
+                    <div class="grid-2">
+                        <div class="condition-item">
+                            <span class="lbl">Clima de hoy</span>
+                            <span class="icon-lg">☀️</span>
+                            <span class="val">Soleado</span>
+                        </div>
+                        <div class="condition-item">
+                            <span class="lbl">Salud del cultivo</span>
+                            <span class="icon-lg">✅</span>
+                            <span class="val">Óptimo</span>
+                        </div>
+                        <div class="condition-item">
+                            <span class="lbl">Humedad estimada</span>
+                            <span class="icon-lg" style="color: #3b82f6;">💧</span>
+                            <span class="val">75%</span>
+                        </div>
+                        <div class="condition-item">
+                            <span class="lbl">Crecimiento semanal</span>
+                            <span class="icon-lg highlight" style="font-weight: bold;">↗</span>
+                            <span class="val highlight">5%</span>
+                        </div>
+                        <div class="alert-card">
+                            <span class="icon-lg" style="color: #ef4444;">⚠️</span>
+                            <div>
+                                <span class="lbl" style="margin: 0 0 5px 0;">Alertas</span>
+                                <p class="text-muted">Se pronostican lluvias torrenciales la próxima semana</p>
+                            </div>
+                        </div>
+                        <div class="traffic-lights">
+                            <span class="lbl">Estado general del cultivo</span>
+                            <div class="lights-container">
+                                <div class="light red"></div>
+                                <div class="light yellow"></div>
+                                <div class="light green"></div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <!-- VISTA: MI CULTIVO -->
+            <section id="cultivo" class="tab-content">
+                <span class="date">26 de Marzo del 2026</span>
+                <h1 style="text-align: center; margin-bottom: 25px;">Mi cultivo</h1>
+                
+                <h2><span class="highlight">Parcela 1:</span> "Rancho Nuevo" ⚙️</h2>
+
+                <div class="card">
+                    <h3 style="text-align: center;">Ficha técnica</h3>
+                    <ul class="data-list">
+                        <li><span class="icon">📍</span> <span>Coordenadas GPS:</span> <strong>24.5914° N, 107.3942° W</strong></li>
+                        <li><span class="icon">🗺️</span> <span>Tamaño del terreno:</span> <strong>12.5 Hectáreas</strong></li>
+                        <li><span class="icon">⭐</span> <span>Tipo de cultivo:</span> <strong>Tomate Rojo (Saladette)</strong></li>
+                        <li><span class="icon">💧</span> <span>Sistema de riego:</span> <strong>Goteo por cintilla</strong></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 style="text-align: center;">Mi parcela</h3>
+                    <div class="flex-between">
+                        <span style="color: var(--text-muted); cursor: pointer;">❮</span>
+                        <div class="map-placeholder">
+                            <div class="map-texture"></div>
+                            <div style="position: absolute; top:0; left:0; right:0; background:#fff; color:#000; text-align:center; font-size:10px; padding:3px; font-weight:bold;">Land Classification</div>
+                            <div class="map-legend">
+                                <div class="map-legend-item"><div class="legend-color" style="background:#ca8a04;"></div> Bare/water</div>
+                                <div class="map-legend-item"><div class="legend-color" style="background:#fde047;"></div> Sparse veg.</div>
+                                <div class="map-legend-item"><div class="legend-color" style="background:#4ade80;"></div> Moderate (crops)</div>
+                                <div class="map-legend-item"><div class="legend-color" style="background:#166534;"></div> Dense vegetation</div>
+                            </div>
+                        </div>
+                        <span style="color: var(--text-muted); cursor: pointer; margin-left: 10px;">❯</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="text-align: center;">Crecimiento histórico del cultivo</h3>
+                    <div class="chart-container">
+                        <svg class="chart-svg" viewBox="0 0 300 120" preserveAspectRatio="none">
+                            <line x1="30" y1="0" x2="30" y2="100" class="chart-grid" />
+                            <line x1="80" y1="0" x2="80" y2="100" class="chart-grid" />
+                            <line x1="130" y1="0" x2="130" y2="100" class="chart-grid" />
+                            <line x1="180" y1="0" x2="180" y2="100" class="chart-grid" />
+                            <line x1="230" y1="0" x2="230" y2="100" class="chart-grid" />
+                            <line x1="280" y1="0" x2="280" y2="100" class="chart-grid" />
+                            
+                            <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="rgba(74, 222, 128, 0.2)"/>
+                                <stop offset="100%" stop-color="rgba(74, 222, 128, 0)"/>
+                            </linearGradient>
+                            <path d="M 10 90 Q 30 70 80 70 T 150 40 T 230 20 T 290 10 L 290 100 L 10 100 Z" fill="url(#chartFill)" />
+                            <path d="M 10 90 Q 30 70 80 70 T 150 40 T 230 20 T 290 10" class="chart-line" />
+                            
+                            <circle cx="10" cy="90" r="4" class="chart-point" />
+                            <circle cx="80" cy="70" r="4" class="chart-point" />
+                            <circle cx="150" cy="40" r="4" class="chart-point" />
+                            <circle cx="230" cy="20" r="4" class="chart-point" />
+                            <circle cx="290" cy="10" r="4" class="chart-point" />
+                            
+                            <g class="chart-labels">
+                                <text x="70" y="115">OCT</text>
+                                <text x="120" y="115">NOV</text>
+                                <text x="170" y="115">DIC</text>
+                                <text x="220" y="115">ENE</text>
+                                <text x="250" y="115">FEB</text>
+                                <text x="275" y="115">MAR</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VISTA: REPORTE -->
+            <section id="reporte" class="tab-content">
+                <span class="date">26 de Marzo del 2026</span>
+                <h1 style="text-align: center; margin-bottom: 25px;">Reporte de crédito</h1>
+                
+                <h2 style="margin-bottom: 5px;"><span class="highlight">Don José,</span></h2>
+                <p class="subtitle" style="margin-top: 0;">¡Tu AgriScore está en buena forma!</p>
+
+                <div class="flex-between" style="margin-top: 25px;">
+                    <span style="font-weight: 800; font-size: 14px;"><span class="highlight">750</span> <span class="text-muted">/ 850</span></span>
+                    <span class="highlight" style="font-weight: 800; font-size: 14px; letter-spacing: 1px;">EXCELENTE</span>
+                </div>
+
+                <div class="linear-gauge">
+                    <div class="linear-track">
+                        <div class="linear-marker"></div>
+                    </div>
+                    <div class="linear-labels">
+                        <span>300</span><span>560</span><span>750</span><span>850</span>
+                    </div>
+                </div>
+
+                <p style="text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 40px;">Crecimiento de puntaje crediticio AgriScore</p>
+                <div class="chart-container" style="height: 200px; margin-bottom: 30px;">
+                    <svg class="chart-svg" viewBox="0 0 300 150" preserveAspectRatio="none">
+                        <g class="chart-labels">
+                            <text x="0" y="20">850</text>
+                            <text x="0" y="45">750</text>
+                            <text x="0" y="70" font-weight="bold" fill="#fff">650</text>
+                            <text x="0" y="95">550</text>
+                            <text x="0" y="120">450</text>
+                            <text x="0" y="145">350</text>
+                        </g>
+                        <path d="M 30 110 L 40 100 L 50 100 L 60 110 L 70 90 L 80 95 L 90 90 L 100 80 L 110 80 L 120 95 L 130 90 L 140 70 L 150 75 L 160 55 L 170 70 L 180 75 L 190 65 L 200 55 L 210 65 L 220 55 L 230 65 L 240 55 L 250 50 L 260 40 L 270 50 L 280 40 L 290 10" stroke="var(--accent-green)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+                        <path d="M 30 125 L 40 115 L 50 115 L 60 125 L 70 105 L 80 110 L 90 105 L 100 95 L 110 95 L 120 110 L 130 105 L 140 85 L 150 90 L 160 70 L 170 85 L 180 90 L 190 80 L 200 70" stroke="rgba(255,255,255,0.05)" stroke-width="6" fill="none" stroke-linejoin="round"/>
+                        <g class="chart-labels" style="text-anchor: middle;">
+                            <text x="50" y="145">ENE</text>
+                            <text x="100" y="145">FEB</text>
+                            <text x="160" y="145" fill="#fff" font-weight="bold">MAR</text>
+                            <text x="220" y="145">ABR</text>
+                            <text x="270" y="145">MAY</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="card flex-between" style="padding: 15px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div class="bank-icon" style="background: #3b82f6; color: #fff; border-radius: 8px;">1</div>
+                        <div>
+                            <span style="display: block; font-weight: 600; font-size: 14px;">Reporte mensual de AgriScore</span>
+                            <span class="text-muted" style="font-size: 11px;">Revisa tu historial</span>
+                        </div>
+                    </div>
+                    <span class="text-muted">❯</span>
+                </div>
+
+                <h2 style="margin-top: 30px;">Créditos vinculados</h2>
+                
+                <div class="credit-item">
+                    <div class="flex-between">
+                        <div class="credit-header">
+                            <div class="bank-icon" style="background: #22c55e; color: #fff;">1</div>
+                            <div>
+                                <span style="display: block; font-weight: 700; font-size: 14px;">Crédito Agrícola 1</span>
+                                <span class="text-muted" style="font-size: 12px;">Nombre del Banco 1</span>
+                            </div>
+                        </div>
+                        <span class="text-muted">❯</span>
+                    </div>
+                </div>
+
+                <div class="credit-item" style="background: var(--card-bg);">
+                    <div class="flex-between">
+                        <div class="credit-header">
+                            <div class="bank-icon" style="background: #d97706; color: #fff;">1</div>
+                            <div>
+                                <span style="display: block; font-weight: 700; font-size: 14px;">Crédito Agrícola 2</span>
+                                <span class="text-muted" style="font-size: 12px;">Nombre del Banco 2</span>
+                            </div>
+                        </div>
+                        <span class="text-muted">⌄</span>
+                    </div>
+                    
+                    <div class="credit-details">
+                        <div style="display: flex; justify-content: center; align-items: baseline; gap: 10px;">
+                            <span style="font-size: 20px; font-weight: 700; color: var(--accent-green);">Monto<br>total</span>
+                            <span class="amount">= $1,000,000</span>
+                        </div>
+                        
+                        <div class="payment">Próximo pago = $15,000</div>
+                        <span class="text-muted" style="font-size: 12px;">Fecha de pago: 01 de Abril 2026</span>
+                        
+                        <div class="grid-2" style="margin-top: 20px;">
+                            <button style="background: rgba(255,255,255,0.05); border: none; color: var(--text-muted); padding: 12px; border-radius: 8px; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                                Ver detalles <span style="color: var(--accent-green); font-size: 16px;">👁</span>
+                            </button>
+                            <button style="background: rgba(255,255,255,0.05); border: none; color: var(--text-muted); padding: 12px; border-radius: 8px; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                                Contactar al banco <span style="color: var(--accent-green); font-size: 16px;">📞</span>
+                            </button>
+                        </div>
+                        
+                        <p style="font-size: 10px; color: var(--text-muted); margin-top: 20px; line-height: 1.4;">
+                            ¡Mantén tu <span class="highlight">AgriScore</span> alto para que tu banco vea tu buen desempeño!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VISTA: RETOS -->
+            <section id="retos" class="tab-content">
+                <span class="date">26 de Marzo del 2026</span>
+                <h1 style="text-align: center;">Muro de Retos</h1>
+                <p class="subtitle text-muted" style="text-align: center; margin-bottom: 30px;">Sube tu puntaje de AgriScore y aumenta tus probabilidades de mejorar tu crédito</p>
+
+                <h2>Retos disponibles</h2>
+                <div class="grid-2">
+                    <div class="reto-card">
+                        <h4>Prácticas Sustentables</h4>
+                        <span class="reto-count">42 Retos ↗</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 44%; background: var(--chal-orange);"></div>
+                            <span class="progress-text" style="color: #0f172a;">44%</span>
+                        </div>
+                        <div class="reto-icon-box" style="background: var(--chal-orange); color: #fff;">🍃</div>
+                    </div>
+
+                    <div class="reto-card">
+                        <h4>Cuidado <br>de la tierra</h4>
+                        <span class="reto-count">60 Retos ↗</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 32%; background: var(--chal-red);"></div>
+                            <span class="progress-text" style="color: #0f172a;">32%</span>
+                        </div>
+                        <div class="reto-icon-box" style="background: var(--chal-red); color: #0f172a;">🌱</div>
+                    </div>
+
+                    <div class="reto-card">
+                        <h4>Ahorro de Agua</h4>
+                        <span class="reto-count">34 Retos ↗</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%; background: var(--chal-yellow);"></div>
+                            <span class="progress-text" style="color: #0f172a;">65%</span>
+                        </div>
+                        <div class="reto-icon-box" style="background: var(--chal-yellow); color: #000;">🚿</div>
+                    </div>
+
+                    <div class="reto-card">
+                        <h4>Fertilización</h4>
+                        <span class="reto-count">28 Retos ↗</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 82%; background: var(--chal-green);"></div>
+                            <span class="progress-text" style="color: #0f172a;">82%</span>
+                        </div>
+                        <div class="reto-icon-box" style="background: var(--chal-green); color: #0f172a;">🏺</div>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 30px;">Retos completados</h2>
+                <div class="grid-2">
+                    <div class="reto-card">
+                        <h4>Vigor de la cosecha</h4>
+                        <span class="reto-count">20 Retos ↗</span>
+                        <div class="progress-bar" style="background: var(--chal-green); justify-content: flex-end;">
+                            <span class="progress-text" style="color: #fff;">100%</span>
+                        </div>
+                        <div class="reto-icon-box" style="background: #1e293b; color: #fff;">★</div>
+                    </div>
+                    
+                    <div class="reto-card">
+                        <h4>Conocimiento y Capacitación</h4>
+                        <span class="reto-count">16 Retos ↗</span>
+                        <div class="progress-bar" style="background: var(--chal-green); justify-content: flex-end;">
+                            <span class="progress-text" style="color: #fff;">100%</span>
+                        </div>
+                        <div class="reto-icon-box" style="background: #fff; border: 1px solid #ccc; color: #0f172a;">📖</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VISTA: PERFIL -->
+            <section id="perfil" class="tab-content">
+                <span class="date">26 de Marzo del 2026</span>
+                <h1 style="text-align: center; margin-bottom: 30px;">Mi perfil</h1>
+
+                <div class="avatar large">👨🏼‍🌾</div>
+
+                <div class="card" style="margin-top: 30px;">
+                    <h3 style="text-align: center; color: var(--text-main); font-size: 16px; margin-bottom: 20px;">Datos Personales</h3>
+                    
+                    <ul class="data-list profile-list">
+                        <li>
+                            <span style="width: 130px;"><span style="color: var(--accent-green);">👤</span> Nombre:</span>
+                            <strong style="font-weight: 500;">José Ramón López Pérez</strong>
+                        </li>
+                        <li>
+                            <span style="width: 130px;"><span style="color: #eab308;">📁</span> CURP:</span>
+                            <strong style="font-weight: 500;">JRLP920315HDFLRS09</strong>
+                        </li>
+                        <li>
+                            <span style="width: 130px;"><span style="color: #a855f7;">📞</span> Teléfono:</span>
+                            <strong style="font-weight: 500;">(+52) 961-123-4567</strong>
+                        </li>
+                        <li>
+                            <span style="width: 130px;"><span style="color: #ef4444;">📍</span> Localidad:</span>
+                            <strong style="font-weight: 500;">Sindicatura de Costa Rica,<br>Culiacán, Sinaloa, México</strong>
+                        </li>
+                        <li>
+                            <span style="width: 130px;"><span style="color: #3b82f6;">🌐</span> Idioma:</span>
+                            <strong style="font-weight: 500;">Español</strong>
+                        </li>
+                        <li>
+                            <span style="width: 130px; gap: 10px;"><span style="color: #d946ef;">🕒</span> Antigüedad:</span>
+                            <strong style="font-weight: 500;">Miembro desde: Mayo 2024</strong>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tooltip">¿Tienes preguntas?<br>¡Chatea con nuestro Agente de IA en WhatsApp!</div>
+                <div class="whatsapp-fab">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.662-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                    </svg>
+                </div>
+            </section>
+        </div>
+    
+        <!-- NAVEGACIÓN INFERIOR -->
+        
+        <nav class="bottom-nav">
+           <div class="nav-indicator"></div>
+            
+            <button class="nav-item" data-tab="reporte">
+                <svg viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 1 1 0 20 10 10 0 0 1 0-20M11 7h2v6h-2V7m0 8h2v2h-2v-2z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                <span>Reporte</span>
+            </button>
+            <button class="nav-item" data-tab="cultivo">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                <span>Mi cultivo</span>
+            </button>
+            <button class="nav-item" data-tab="inicio">
+                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                <span>Inicio</span>
+            </button>
+            <button class="nav-item" data-tab="retos">
+                <div class="red-dot"></div>
+                <svg viewBox="0 0 24 24"><path d="M12 1L9 9l-8 1 6 6-1 8 6-4 6 4-1-8 6-6-8-1-3-8z"/></svg>
+                <span>Retos</span>
+            </button>
+            <button class="nav-item" data-tab="perfil">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <span>Perfil</span>
+            </button>
+           
+            
+           
+        </nav>
+       
+        <div class ='barra'></div>
+        <div class="barra2">
+    
+        <!-- Este contenedor es el que tiene el view-transition-name: app-morph -->
+        <div id="app-content">
+            <!-- SECCIONES DE CONTENIDO (Inicio, Cultivo, etc.) -->
+        </div>
+        
+        <!-- Este contenedor está fuera, por lo que no se moverá con el contenido superior -->
+        <nav class="bottom-nav">
+            <!-- BOTONES nav-item -->
+        </nav>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

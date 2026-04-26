@@ -1,41 +1,43 @@
-
 # 🌱 AgriScore App
 
-Aplicación web tipo dashboard enfocada en la gestión agrícola, diseñada para visualizar el estado del cultivo, puntaje crediticio y métricas clave del agricultor.
+A mobile-style web dashboard focused on agricultural management, designed to visualize crop conditions, credit scoring, and key farmer metrics.
 
 ---
 
-## 📸 Vista previa
-<img width="465" height="874" alt="image" src="https://github.com/user-attachments/assets/a9217b6d-fe23-4c6d-98cd-95e656ddf044" />
-<img width="458" height="879" alt="image" src="https://github.com/user-attachments/assets/d52f71e0-cec5-4c9d-a915-dc8b6ca3e3c6" />
-<img width="418" height="857" alt="image" src="https://github.com/user-attachments/assets/6f3d970b-4e1a-4296-981e-f36373438019" />
+## Preview
+<p align="center">
+<img width="465/2" height="874/2" alt="image" src="https://github.com/user-attachments/assets/a9217b6d-fe23-4c6d-98cd-95e656ddf044" />
+<img width="458/2" height="879/2" alt="image" src="https://github.com/user-attachments/assets/d52f71e0-cec5-4c9d-a915-dc8b6ca3e3c6" />
+<img width="418/2" height="857/2" alt="image" src="https://github.com/user-attachments/assets/6f3d970b-4e1a-4296-981e-f36373438019" />
+</p>
+---
+
+## 🧠 Project Context
+
+AgriScore is a mobile-like interface that simulates an agricultural evaluation system based on user activity, crop conditions, and financial behavior.
+
+The goal is to provide clear and visual insights to support better decision-making for farmers through an intuitive and modern UI.
+
+This project was developed for a technology competition held in Mexico City, where it was selected as a finalist due to its strong focus on UX/UI and data visualization.
 
 ---
 
-## Contexto
+## ⚙️ Technologies Used
 
-AgriScore es una interfaz tipo aplicación móvil que simula un sistema de evaluación agrícola basado en actividad, condiciones del cultivo y comportamiento financiero.
-El objetivo es proporcionar información clara y visual para mejorar la toma de decisiones del agricultor.
-Proyecto desarrollado para un concurso tecnológico en la Ciudad de México, donde fue seleccionado como finalista por su enfoque en UX/UI y visualización de datos.
----
-
-## ⚙️ Lenguajes Usados
-
-- HTML5
-- CSS3 (Diseño responsive + UI tipo app)
-- JavaScript (DOM, eventos, navegación dinámica)
-- Animaciones con View Transitions API
+- HTML5  
+- CSS3 (Responsive design + mobile app-style UI)  
+- JavaScript (DOM manipulation, event handling, dynamic navigation)  
+- View Transitions API for animations  
 
 ---
 
-## 🔥 Características
+## 🔥 Features
 
-- Navegación tipo app móvil
-- Dashboard con métricas dinámicas
-- Sistema de pestañas y sub-vistas
-- Indicadores visuales (gráficas, gauge, progreso)
-- Simulación de score crediticio agrícola
-- Interfaz enfocada en experiencia de usuario (UX/UI)
+- Mobile app-style navigation  
+- Interactive dashboard with key metrics  
+- Tab-based and sub-view navigation system  
+- Visual indicators (charts, gauge, progress bars)  
+- Simulated agricultural credit scoring system  
+- Strong focus on user experience (UX/UI)  
 
 ---
-

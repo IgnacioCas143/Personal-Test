@@ -9,7 +9,7 @@ A web-based scheduling application designed to manage and visualize team availab
 
 <p align="center">
   <img width="90%" alt="image" src="https://github.com/user-attachments/assets/0d9cd238-c0dd-405d-bf01-9b6f572df35a" />
-  <img width="30%" alt="image" src="https://github.com/user-attachments/assets/13a20973-8302-4227-8b22-d1a166b365b1" />
+  <img width="35%" alt="image" src="https://github.com/user-attachments/assets/13a20973-8302-4227-8b22-d1a166b365b1" />
   <img width="30%" alt="image" src="https://github.com/user-attachments/assets/08e1dd66-1caa-4542-94e7-7147e38582d3" />
   <img  width="80%" alt="image" src="https://github.com/user-attachments/assets/a766319c-c205-465e-968f-813f1930a20d" />
 </p>

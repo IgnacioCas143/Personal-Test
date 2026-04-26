@@ -6,9 +6,9 @@ A mobile-style web dashboard focused on agricultural management, designed to vis
 
 ## Preview
 <p align="center">
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/a9217b6d-fe23-4c6d-98cd-95e656ddf044" />
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/d52f71e0-cec5-4c9d-a915-dc8b6ca3e3c6" />
-<img width="50%" alt="image" src="https://github.com/user-attachments/assets/6f3d970b-4e1a-4296-981e-f36373438019" />
+<img width="30%" alt="image" src="https://github.com/user-attachments/assets/a9217b6d-fe23-4c6d-98cd-95e656ddf044" />
+<img width="30%" alt="image" src="https://github.com/user-attachments/assets/d52f71e0-cec5-4c9d-a915-dc8b6ca3e3c6" />
+<img width="30%" alt="image" src="https://github.com/user-attachments/assets/6f3d970b-4e1a-4296-981e-f36373438019" />
 </p>
 ---
 
